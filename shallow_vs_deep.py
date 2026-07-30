@@ -25,5 +25,10 @@ d=copy.copy(c)
 d[1].append(200)
 print(d)    
 print(c)
+print(id(d)) # the outer list id are diffrent
+print(id(c)) 
+print(id(d[1])) # this ids will be same so it refers to same object 
+print(id(c[1]))
+
 """[10, [20, 30, 200], 40, 50]
    [10, [20, 30, 200], 40, 50]"""
