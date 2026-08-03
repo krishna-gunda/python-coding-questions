@@ -12,7 +12,15 @@ print(matrix1*matrix2)
 'adding the matrix'
 
 print(matrix1+matrix2)
-             
 
 
-    
+'''manual multiplying'''
+
+
+a=[[1,2],[3,4]]
+b=[[1,2],[3,4]]
+row=[]
+for i in range(len(a)):
+    for j in range(len(a[i])):
+        row.append(a[i][j]+b[i][j])
+print(row)        
