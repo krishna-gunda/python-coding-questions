@@ -2,7 +2,7 @@
 number is a Harshad Number (divisible by the sum of its digits).'''
 
 
-a=input('enter a number ')
+a=input('enter a number=')
 result=0
 for i in a:
     result+=int(i)
