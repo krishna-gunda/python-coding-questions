@@ -71,6 +71,7 @@ def dep_avg_sal(data):
     dic={}   
     count={}
     avg_sal={}
+    above_avg_sal={}
     for name in data:
         if data[name][0] not in dic:
             dic[data[name][0]]=data[name][1]
@@ -82,9 +83,16 @@ def dep_avg_sal(data):
         sal=dic.get(dep)
         number=count.get(dep)
         avg_sal[dep]=sal/number
+    for name in data:
+        person=name
+        dep=data[name][0]
+        if data[name][1] > avg_sal.get(dep):
+            above_avg_sal[dep]=person
+        
 
+    
                 
-    return dic ,count,avg_sal     
+    return avg_sal,above_avg_sal  
 
 
 
@@ -104,5 +112,7 @@ data = {
 max_name,max_sal,min_name,min_sal=max_salary(data)
 print(f'The highest paid is {max_sal} and name is {max_name}\nThe lowest paid is {min_sal} and name is {min_name}')
 
-print(dep_avg_sal(data))
+avg_sal,above_avg_sal=dep_avg_sal(data)
+
+print(f'The average salary per department {avg_sal}\n{above_avg_sal}')
 
