@@ -33,13 +33,7 @@ Above Department Average
 Rahul
 Sita
 
-Sorted Salaries
-
-Ram
-Sita
-Anu
-Krishna
-Rahul'''
+'''
 
 
 
@@ -99,20 +93,14 @@ def dep_avg_sal(data):
             
         
 
-data = {
-    'nikhil': ('AI', 89),
-    'krishna': ('HR', 2345),
-    'vamshi': ('AI', 2389),
-    'sai': ('AI', 389)
-}
 
-#num=int(input("enter the no of employee details to enter in the data base "))
-#data=store_emply_details(num)
-#print(data)
+
+num=int(input("enter the no of employee details to enter in the data base "))
+data=store_emply_details(num)
 max_name,max_sal,min_name,min_sal=max_salary(data)
 print(f'The highest paid is {max_sal} and name is {max_name}\nThe lowest paid is {min_sal} and name is {min_name}')
 
 avg_sal,above_avg_sal=dep_avg_sal(data)
 
-print(f'The average salary per department {avg_sal}\n{above_avg_sal}')
+print(f'The average salary per department {avg_sal}\nThe salary above the avg in the department{above_avg_sal}')
 
