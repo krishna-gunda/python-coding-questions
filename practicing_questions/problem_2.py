@@ -51,10 +51,12 @@ def store_emply_details(num):
     return data
 
 def max_salary(data):
-    max_sal=0
-    max_name=""
-    min_sal=0
-    min_name=""
+    
+    first_key = next(iter(data))
+    max_sal = data[first_key][1]
+    max_name = first_key
+    min_sal = data[first_key][1]
+    min_name = first_key
     for name in data:
         if data[name][1]>max_sal:
           max_sal=data[name][1]
@@ -62,7 +64,32 @@ def max_salary(data):
         elif data[name][1]<min_sal and data[name][1]!=max_sal:
             min_sal=data[name][1]
             min_name=name
-    return max_name,min_name   
+    return max_name,max_sal,min_name,min_sal  
+
+
+def dep_avg_sal(data):
+    dic={}   
+    count={}
+    avg_sal={}
+    for name in data:
+        if data[name][0] not in dic:
+            dic[data[name][0]]=data[name][1]
+            count[data[name][0]]=1
+        else:
+            dic[data[name][0]]+=data[name][1]
+            count[data[name][0]]+=1
+    for dep in dic.keys():
+        sal=dic.get(dep)
+        number=count.get(dep)
+        avg_sal[dep]=sal/number
+
+                
+    return dic ,count,avg_sal     
+
+
+
+            
+        
 
 data = {
     'nikhil': ('AI', 89),
@@ -74,8 +101,8 @@ data = {
 #num=int(input("enter the no of employee details to enter in the data base "))
 #data=store_emply_details(num)
 #print(data)
-max_name,min_name=max_salary(data)
-print(max_name)
-print(min_name)
+max_name,max_sal,min_name,min_sal=max_salary(data)
+print(f'The highest paid is {max_sal} and name is {max_name}\nThe lowest paid is {min_sal} and name is {min_name}')
 
+print(dep_avg_sal(data))
 
