@@ -9,4 +9,15 @@ def missing_number(lst):
             return i
     return None
 
-print(missing_number([0,1,2,6,3,4]))    
+
+print(missing_number([0,1,2,6,3,4]))
+
+
+# by using the another approach
+
+def mis_num(n,lst):
+    result=(n*(n+1)//2)-sum(lst)
+    return result
+
+print(mis_num(5,[1,2,4,5]))
+
