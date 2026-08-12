@@ -20,4 +20,5 @@ def mis_num(n,lst):
     return result
 
 print(mis_num(5,[1,2,4,5]))
+print(mis_num(6, [1, 2, 3, 5, 6]))
 
