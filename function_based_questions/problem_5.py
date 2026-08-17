@@ -6,18 +6,22 @@ break out and print "Diverging too fast." If the number 27 appears anywhere in t
 sequence, print a special message using elif logic — but don't stop the loop'''
 
 
-n=int(input("Enter a number="))
+n = int(input("Enter a number="))
 
-while True:
-    if n>10000:
+while n != 1:
+
+    if n > 10000:
         print("Diverging too fast.")
-    elif n==27:
+        break
+
+    elif n == 27:
         print("27 appears in the loop")
         continue
-    elif n%2==0:
-        n=n%2==0
-    elif n%2!=0:
-        n=(n*3)+1
-        print(n)  
+
+    if n % 2 == 0:
+        n = n // 2
     else:
-        break          
+        n = (n * 3) + 1
+
+    print(n)
+             
