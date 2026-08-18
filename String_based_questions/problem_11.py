@@ -49,3 +49,16 @@ def anagram(s1,s2):
         return "NOT ANAGRAM"                 
     
 print(anagram("Dormitory", "Dirty Room!"))    
+
+
+
+# another approach
+
+def anagram(s1,s2):
+    s1="".join(i.lower() for i in s1 if i.isalnum()) # here the punctuations are removed automatically and convered to lower
+    s2="".join(i.lower() for i in s2 if i.isalnum())
+    if sorted(s1)==sorted(s2):
+        return "Anagram"
+    else:
+        return "Not Anagram"
+print(anagram("Dormitory", "Dirty Room!"))  
