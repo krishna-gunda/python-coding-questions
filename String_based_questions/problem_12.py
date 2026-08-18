@@ -14,5 +14,3 @@ def capitalize_every_other(s):
 
     return result
 print(capitalize_every_other("krishna"))    
-
-# another appraoch
