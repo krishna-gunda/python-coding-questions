@@ -17,3 +17,21 @@ def count_overlapping(string,sub):
     return result
 print(count_overlapping("abc", "x"))
 
+# another approach
+
+def count(string,sub):
+    start=0
+    result=0
+    while True:
+        a=string.find(sub,start)
+        if a==-1:
+            break
+        else:
+            start=a+1
+            result+=1
+    return result
+print(count("aaaa", "aa"))      # 3
+print(count("aaaaa", "aa"))     # 4
+print(count("abababa", "aba"))  # 3
+print(count("abc", "x"))        # 0
+print(count("abc", "abcd"))     # 0        
