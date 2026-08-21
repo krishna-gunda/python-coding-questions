@@ -1,41 +1,174 @@
+# ============================================================
+#                    INHERITANCE IN PYTHON
+# ============================================================
+
+# Inheritance is an OOP concept that allows a child class
+# to reuse the methods and attributes of a parent class.
+#
+# In simple words:
+#
+# Parent class  -> Contains common things
+# Child class   -> Gets the common things + has its own things
+#
+#
+# REAL-WORLD EXAMPLE:
+#
+# Employee
+#    |
+#    |------ Developer
+#    |
+#    |------ Tester
+#
+# Every employee needs to work.
+# But a Developer can code and a Tester can test.
+#
+# So, we can keep the common method work() inside Employee
+# and allow Developer and Tester to inherit it.
+
+
+# ------------------------------------------------------------
+# WITHOUT INHERITANCE
+# ------------------------------------------------------------
+
 class Employee:
     def work(self):
-        print("The work is started")  # this is Employee class
+        print("The employee is working")
 
-# lets create another class
+
 class Developer:
     def code(self):
-        print("The developer is coding") # This is the Developer class
+        print("The developer is coding")
+
 
 class Tester:
     def testing(self):
-        print("The tester is testing the app") # this is the test class
+        print("The tester is testing the application")
 
 
-# here we have created 3 classes employee.developer and the tester but here we can see that 
-# we can call the methods by creating the objects to the classes we can only use the methods of that class only
-# we can't access the empolyee class methods in the developer and the tester 
-# what if if want to use the method of the employee class in the developer and the tester to make it possible here comes the inheritance
+# Here, Employee, Developer and Tester are separate classes.
+#
+# Developer can use only its own method code().
+# Tester can use only its own method testing().
+#
+# Developer cannot use work() because work() belongs to
+# the Employee class.
+
+
+# ------------------------------------------------------------
+# INHERITANCE
+# ------------------------------------------------------------
 
 class Employee:
     def work(self):
-        print("The work is started")  # this is Employee class
+        print("The employee is working")
 
-# lets create another class
-class Developer(Employee): # we can create the inheritance easily by using the brackets for the class and here you can see the Employee class is the parent class where we are going to inherit the code of the employee class
+
+# Developer(Employee)
+#
+# Employee inside the brackets means:
+# Developer is inheriting from Employee.
+#
+# Employee  -> Parent class
+# Developer -> Child class
+#
+# Developer will now get the work() method from Employee.
+
+class Developer(Employee):
     def code(self):
-        print("The developer is coding") # This is the Developer class
+        print("The developer is coding")
 
-class Tester:
+
+# Tester is also inheriting from Employee.
+#
+# Therefore, Tester can also use work().
+
+class Tester(Employee):
     def testing(self):
-        print("The tester is testing the app") # this is the test class
-
-d=Developer()
-d.work()        # the output is The work is started
-# here we are calling the diffrent class method by using the inheritance concept 
-d.code() # we can also call the own method of that class
+        print("The tester is testing the application")
 
 
+# ------------------------------------------------------------
+# USING THE DEVELOPER CLASS
+# ------------------------------------------------------------
+
+d = Developer()
+
+d.work()
+# work() belongs to Employee.
+# But Developer inherited Employee.
+# Therefore, Developer can use work().
+
+d.code()
+# code() belongs to Developer.
+# Therefore, Developer can use its own method.
 
 
+# Output:
+# The employee is working
+# The developer is coding
 
+
+# ------------------------------------------------------------
+# USING THE TESTER CLASS
+# ------------------------------------------------------------
+
+t = Tester()
+
+t.work()
+# work() is inherited from Employee.
+
+t.testing()
+# testing() is the Tester class's own method.
+
+
+# Output:
+# The employee is working
+# The tester is testing the application
+
+
+# ============================================================
+# IMPORTANT POINT
+# ============================================================
+
+# Inheritance means:
+#
+# Child class = Parent class features + Child's own features
+#
+# Developer = Employee + Developer
+# Tester    = Employee + Tester
+#
+#
+# Employee
+#    |
+#    |------ work()
+#    |
+#    +------ Developer
+#    |          |
+#    |          +------ code()
+#    |
+#    +------ Tester
+#               |
+#               +------ testing()
+#
+#
+# So:
+#
+# Developer can use:
+#     work()  -> inherited from Employee
+#     code()  -> Developer's own method
+#
+# Tester can use:
+#     work()     -> inherited from Employee
+#     testing()  -> Tester's own method
+#
+#
+# The main purpose of inheritance is CODE REUSABILITY.
+#
+# Instead of writing the same common method again and again
+# in Developer and Tester, we write it once in Employee
+# and inherit it in the child classes.
+#
+# In simple words:
+#
+# "Inheritance allows a child class to reuse the properties
+# and methods of a parent class."
