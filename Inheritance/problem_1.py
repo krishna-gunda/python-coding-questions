@@ -62,8 +62,7 @@ class Employee:
 
     def calculate_salary(self,num):
         bonus=self.base_salary*(num/100)
-        self.base_salary=self.base_salary+bonus
-        print(f'The salary is {self.base_salary}')
+        print(f'The salary is {self.base_salary+bonus}')
 
 
 class Developer(Employee):
@@ -81,6 +80,15 @@ class Datascientist(Employee):
         super().__init__(name,id,base_salary)
     def calculate_salary(self):
             super().calculate_salary(30)
-data=Datascientist("nikhil",102,34000)
-data.calculate_salary()
-data.show_details()            
+# data=Datascientist("nikhil",102,34000)
+# data.show_details()
+# data.calculate_salary()
+
+class Manager(Employee):
+    def __init__(self,name,id,salary):
+        super().__init__(name,id,salary)
+    def calculate_Salary(self):
+        super().calculate_salary(40)
+mag1=Manager("vamshi",202,32000)
+mag1.show_details()
+mag1.calculate_Salary()        
