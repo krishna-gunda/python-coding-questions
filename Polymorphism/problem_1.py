@@ -38,3 +38,96 @@ db=Debitcard(3000)
 nb=Netbanking(50000)
 
 
+
+#####################################################################
+# adding the another approach
+
+
+
+# Parent class
+class Payment:
+
+    def __init__(self, amount):
+        self.amount = amount
+
+    def show_message(self):
+        print("Welcome to the Payment System")
+
+    def process_payment(self):
+        print("Processing payment...")
+
+
+
+
+class CreditCard(Payment):
+
+    def process_payment(self):
+
+        # Calling the parent class method
+        super().show_message()
+
+        # Credit Card commission = 2%
+        commission = self.amount * 2 / 100
+
+        final_amount = self.amount + commission
+
+        print(f"Payment of ₹{self.amount} processed using Credit Card")
+        print(f"Transaction fee: ₹{commission}")
+        print(f"Final amount: ₹{final_amount}")
+
+
+
+class DebitCard(Payment):
+
+    def process_payment(self):
+
+        # Calling the parent class method
+        super().show_message()
+
+        # Debit Card fixed commission
+        commission = 25
+
+        final_amount = self.amount + commission
+
+        print(f"Payment of ₹{self.amount} processed using Debit Card")
+        print(f"Transaction fee: ₹{commission}")
+        print(f"Final amount: ₹{final_amount}")
+
+
+
+
+class NetBanking(Payment):
+
+    def process_payment(self):
+
+        # Calling the parent class method
+        super().show_message()
+
+        # Net Banking fixed commission
+        commission = 50
+
+        final_amount = self.amount + commission
+
+        print(f"Payment of ₹{self.amount} processed using Net Banking")
+        print(f"Transaction fee: ₹{commission}")
+        print(f"Final amount: ₹{final_amount}")
+
+
+
+
+payment1 = CreditCard(4000)
+payment2 = DebitCard(3000)
+payment3 = NetBanking(50000)
+
+
+
+
+payments = [payment1, payment2, payment3]
+
+for payment in payments:
+
+    payment.process_payment()
+
+    print("-----------------------------")
+
+
