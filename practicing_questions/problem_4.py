@@ -47,27 +47,3 @@ sum()
 len()
 variables'''
 
-dic={}
-def adding_marks(name,sub1,sub2,sub3):
-    
-    key=list(dic)
-    print(key)
-    if name not in key:
-        dic[name]=sub1,sub2,sub3
-    else:
-        return "name is already present in the dictionary"
-    return dic
-for i in range(2):
-    print("Enter amrks:")
-    name,sub1,sub2,sub3=map(str,input().split(" "))
-    print(adding_marks(name,int(sub1),int(sub2),int(sub3)))
-
-def calculating_marks():
-    result=[]
-    keys=list(dic)
-    for key in keys :
-        marks=dic.get(key)
-        result.append(sum(marks))
-    return result        
-
-print(calculating_marks())
