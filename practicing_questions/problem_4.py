@@ -62,3 +62,12 @@ for i in range(2):
     name,sub1,sub2,sub3=map(str,input().split(" "))
     print(adding_marks(name,int(sub1),int(sub2),int(sub3)))
 
+def calculating_marks():
+    result=[]
+    keys=list(dic)
+    for key in keys :
+        marks=dic.get(key)
+        result.append(sum(marks))
+    return result        
+
+print(calculating_marks())
