@@ -58,3 +58,16 @@ Expected output:
 '''
 
 
+n,m=map(int,input("Enter the Length and height using space :").split())
+
+for i in range(n):
+    if i==n//2:
+        print("Welcome".center(m,"-"))
+    elif i<n//2:
+        pattern=".|."*(2*i+1)
+        print(pattern.center(m,"-")) 
+    else:
+        pattern=".|."*(2 * (n - i) - 1)
+        print(pattern.center(m,"-"))       
+     
+        
