@@ -47,17 +47,25 @@ Output:
 -1
 '''
 
-n=[int(x) for x in input('Enter the numbers with the space ').split()]
+# n=[int(x) for x in input('Enter the numbers with the space ').split()]
+# result=[]
+# for i in n:
+#     if n.count(i)==1:
+#         result.append(i)
+# if result:  # here empty list is considered as false
+#     print(result)
+# else:
+#     print(-1)   
+
+
+# another approach 
+
+frequency={}
+n=[int(x) for x in input('Enter the numbers with the space :').split()]
 result=[]
 for i in n:
-    if n.count(i)==1:
+    frequency[i]=frequency.get(i,0)+1   # Get the current count of the number; if it is not in the dictionary, start from 0, then add 1.
+for i in frequency:
+    if frequency.get(i)==1:
         result.append(i)
-if result:  # here empty list is considered as false
-    print(result)
-else:
-    print(-1)   
-
-
-
-     
-       
+print(result if result else -1)
