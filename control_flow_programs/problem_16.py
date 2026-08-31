@@ -53,13 +53,18 @@ Output:
 
 # here we need to find only one word that appears first
 result=[]
+frequency={}
 n=input('Enter the string ').split()
 m=[i.lower() for i in n]
+for i in m:
+    frequency[i]=frequency.get(i,0)+1
 for i in n:
-    if m.count(i.lower())==1:
+    if frequency[i.lower()]==1:
         result.append(i)
         break
-print(result[0] if result else -1) 
+print(result[0] if result else -1)    
+
+
         
     
 
