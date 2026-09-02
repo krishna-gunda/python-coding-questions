@@ -1,5 +1,3 @@
-
-
 n=[int(x) for x in input('Enter numbers with the space :').split()]
 result=[]
 for i in range(len(n)):
