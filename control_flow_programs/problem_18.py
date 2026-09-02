@@ -1,5 +1,5 @@
-lis = [1, -1, 5, -2, 0]
-k=3
+lis=[int(i) for i in input('Enter the numbers with the space :').split()]
+k=int(input('Enter the value'))
 
 result=[]
 for i in range(len(lis)):
