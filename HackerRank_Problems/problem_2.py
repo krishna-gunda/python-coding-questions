@@ -48,3 +48,14 @@ y = [int(i) for i in input().split()]
 
 for i in product(x, y):
     print(i, end=" ")
+
+
+# another approach
+# 
+x=[2,3]
+y=[5,4]
+result=[]
+for i in x:
+    for j in y:
+        result.append((i,j))
+print(result)    
