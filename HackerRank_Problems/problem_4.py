@@ -120,3 +120,37 @@ e-d-c-b-a-b-c-d-e
 --------e--------
 '''
 
+# adding another approach 
+
+# solving the issue
+
+
+def print_rangoli(size):
+
+
+    alphabet = [chr(i) for i in range(97, 123)]
+    alphabet = alphabet[:size]
+
+    indices = list(range(size))
+    indices = indices + indices[-2::-1]
+
+    width = size * 4 - 3
+
+    for i in indices:
+        start_index = i + 1
+        original = alphabet[-start_index:]
+        reverse = original[::-1]
+        row = reverse + original[1:]
+        s = '-'.join(row)
+        s = s.center(width, '-')
+        print(s)
+        
+        
+                           
+        
+        
+    
+
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
