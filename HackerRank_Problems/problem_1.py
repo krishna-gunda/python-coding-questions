@@ -69,5 +69,5 @@ for i in range(n):
     else:
         pattern=".|."*(2 * (n - i) - 1)
         print(pattern.center(m,"-"))       
-     
-        
+
+             
